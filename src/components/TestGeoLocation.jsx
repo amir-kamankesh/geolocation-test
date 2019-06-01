@@ -7,7 +7,7 @@ class TestGeoLocation extends React.Component {
             console.log(navigator.geolocation);
             navigator.geolocation.getCurrentPosition(function(location) {
                 console.log(location);
-                alert('your lat is ' + location.coords.latitude.toString() + ' and your lon is ' + location.coords.longitude.toString());
+                alert('your lat is ' + location.coords.latitude + ' and your lon is ' + location.coords.longitude);
             }, function (error) {
                 console.log(error);
             });
