@@ -3,7 +3,7 @@ import React from 'react';
 class TestGeoLocation extends React.Component {
     componentDidMount() {
         if ('geolocation' in navigator) {
-            // alert('the geo location is enable');
+            alert('the geo location is enable');
             navigator.geolocation.getCurrentPosition((location) => {
                 console.log(location);
                 alert('your lat is ' + location.coords.latitude.toString() + ' and your lon is ' + location.coords.longitude.toString());
