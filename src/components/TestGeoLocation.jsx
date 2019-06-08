@@ -12,7 +12,7 @@ class TestGeoLocation extends React.Component {
                 console.log(error);
             });
         } else {
-            alert('the geo location api is disable !!');
+            alert('the geo location api is disable !!!');
         }
     }
 
