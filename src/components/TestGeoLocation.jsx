@@ -25,7 +25,7 @@ class TestGeoLocation extends React.Component {
                 }
             }, function (error) {
                 console.log('hey we have error to read location from your device');
-                console.log(error);
+                console.log(JSON.stringify(error.message));
             }, options);
         } else {
             console.log('the geo location api is disable !!!');
