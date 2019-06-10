@@ -5,7 +5,12 @@ class TestGeoLocation extends React.Component {
         console.log('hello from amir');
         if ('geolocation' in navigator) {
             console.log('geolocation is enable');
-            console.log(JSON.stringify(navigator.geolocation));
+            console.log(navigator.geolocation);
+            if ('getCurrentPosition' in navigator.geolocation) {
+                console.log('heeeeey navigator have getCurrentPosition');
+            } else {
+                console.log('sorry getCurrentPosition not exist');
+            }
             navigator.geolocation.getCurrentPosition(function(location) {
                 console.log('in get current position');
                 try {
