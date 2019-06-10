@@ -21,7 +21,7 @@ class TestGeoLocation extends React.Component {
                 try {
                     console.log('your lat is ' + location.coords.latitude + ' and your lon is ' + location.coords.longitude);
                 } catch (e) {
-                    console.log('we have error to access location object');
+                    console.log('we have error to access location object (in try cache)');
                 }
             }, function (error) {
                 console.log('hey we have error to read location from your device');
