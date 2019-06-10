@@ -3,6 +3,11 @@ import React from 'react';
 class TestGeoLocation extends React.Component {
     componentDidMount() {
         console.log('hello from amir');
+        const options = {
+            enableHighAccuracy: true,
+            timeout: 10000,
+            maximumAge: 0
+        };
         if ('geolocation' in navigator) {
             console.log('geolocation is enable');
             console.log(navigator.geolocation);
@@ -21,7 +26,7 @@ class TestGeoLocation extends React.Component {
             }, function (error) {
                 console.log('hey we have error to read location from your device');
                 console.log(error);
-            });
+            }, options);
         } else {
             console.log('the geo location api is disable !!!');
         }
