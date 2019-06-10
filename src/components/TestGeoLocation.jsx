@@ -10,7 +10,7 @@ class TestGeoLocation extends React.Component {
         console.log('hello from amir');
         const options = {
             enableHighAccuracy: true,
-            timeout: 10000,
+            timeout: 30000,
             maximumAge: 0
         };
         if ('geolocation' in navigator) {
