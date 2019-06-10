@@ -1,6 +1,11 @@
 import React from 'react';
 
 class TestGeoLocation extends React.Component {
+    state = {
+        lat: 0,
+        lng: 0
+    };
+
     componentDidMount() {
         console.log('hello from amir');
         const options = {
@@ -16,14 +21,19 @@ class TestGeoLocation extends React.Component {
             } else {
                 console.log('sorry getCurrentPosition not exist');
             }
-            navigator.geolocation.getCurrentPosition(function(location) {
+            navigator.geolocation.getCurrentPosition((location) => {
                 console.log('in get current position');
                 try {
                     console.log('your lat is ' + location.coords.latitude + ' and your lon is ' + location.coords.longitude);
+                    this.setState({
+                        lat: location.coords.latitude,
+                        lng: location.coords.longitude
+                    });
                 } catch (e) {
                     console.log('we have error to access location object (in try cache)');
                 }
-            }, function (error) {
+
+            }, (error) => {
                 console.log('hey we have error to read location from your device');
                 console.log(JSON.stringify(error.message));
             }, options);
@@ -35,7 +45,7 @@ class TestGeoLocation extends React.Component {
     render() {
         return (
             <div>
-                test geo location component
+                your lat is {this.state.lat} and your lng is {this.state.lng}
             </div>
         );
     }
